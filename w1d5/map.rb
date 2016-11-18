@@ -1,14 +1,14 @@
 class Map
-  attr_accessor :grid
+  attr_accessor :map
 
   def initialize
-    @grid = Array.new
+    @map = Array.new
   end
 
   ##Helper method for searching for keys
   def key_location(key)
-    grid.each_index do |index|
-      return index if grid[index].first == key
+    map.each_index do |index|
+      return index if map[index].first == key
     end
 
     nil
@@ -18,22 +18,22 @@ class Map
     location = key_location(key)
 
     if location
-      grid[location][1] = value
+      map[location][1] = value
     else
-      grid << [key, value]
+      map << [key, value]
     end
   end
 
   def lookup(key)
-    grid[key_location(key)][1]
+    map[key_location(key)][1]
   end
 
   def remove(key)
-    grid.delete_if { |pair| pair.first == key }
+    map.delete_if { |pair| pair.first == key }
   end
 
   def show
-    grid.map { |el| el }
+    map.map { |el| el }
   end
 end
 
