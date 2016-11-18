@@ -5,6 +5,7 @@ class Map
     @grid = Array.new
   end
 
+  ##Helper method for searching for keys
   def key_location(key)
     grid.each_index do |index|
       return index if grid[index].first == key
@@ -22,6 +23,18 @@ class Map
       grid << [key, value]
     end
   end
+
+  def lookup(key)
+    grid[key_location(key)][1]
+  end
+
+  def remove(key)
+    grid.delete_if { |pair| pair.first == key }
+  end
+
+  def show
+    grid.map { |el| el }
+  end
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -31,5 +44,8 @@ if __FILE__ == $PROGRAM_NAME
   my_map.assign("code", "good")
   my_map.assign("this", "works")
 
-  p my_map.grid
+  p my_map.show
+  puts my_map.lookup("this")
+  my_map.remove("code")
+  p my_map.show
 end
