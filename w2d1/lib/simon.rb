@@ -30,10 +30,8 @@ class Simon
     seq.each do |el|
       puts el
       #sleep(1)
+      #system("clear")
     end
-    #sleep(2)
-    #system("clear")
-
   end
 
   def require_sequence
