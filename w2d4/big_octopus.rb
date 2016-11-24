@@ -3,32 +3,23 @@ fishes = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish', 'ffiiiiisshh', 'fsh
 def sluggish_octopus(array)
   new_array = array.map { |el| el }
 
-  count_hash = {}
+  max_count = 0
+  max_count_idx = 0
 
   0.upto(array.length - 1) do |idx|
     count = 0
     0.upto(array.length - 1) do |idx2|
       next if idx == idx2
-      count += 1 if array[idx2].length > array[idx].length
+      count += 1 if array[idx].length >= array[idx2].length
     end
 
-    count_hash[idx] = count
+    if count > max_count
+      max_count = count
+      max_count_idx = idx
+    end
   end
 
-  #count
-
-  # made_switch = true
-  # while made_switch
-  #   made_switch = false
-  #   0.upto(new_array.length - 2) do |idx|
-  #     if new_array[idx].length < new_array[idx + 1].length
-  #       new_array[idx], new_array[idx + 1] = new_array[idx + 1], new_array[idx]
-  #       made_switch = true
-  #     end
-  #   end
-  # end
-  #
-  # new_array.first
+  array[max_count_idx]
 end
 
 def dominant_octopus(array)
@@ -65,7 +56,15 @@ def slow_dance(tile, array)
 end
 
 
+tiles_hash = {"up" => 0,
+              "right-up" => 1,
+              "right" => 2,
+              "right-down" => 3,
+              "down" => 4,
+              "left-down" => 5,
+              "left" => 6,
+              "left-up" => 7}
 
-def fast_dance(tile, array)
-
+def fast_dance(tile, hash)
+  tiles_hash[tile]
 end
