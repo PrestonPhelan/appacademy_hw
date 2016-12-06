@@ -41,6 +41,31 @@
           <!-- Recipe source will go here -->
       </body>
   </section>
+  <section>
+    <form action="reviews/", method="post">
+      <label id="review">Write a Review of this Recipe
+        <br>
+        <textarea label="review"></textarea>
+      </label>
+      <br>
+      <label id="rating">Rating</label>
+      <input type="radio", name="rating" checked>1</input>
+      <input type="radio", name="rating">2</input>
+      <input type="radio", name="rating">3</input>
+      <input type="radio", name="rating">4</input>
+      <input type="radio", name="rating">5</input>
+      <br>
+      <label id="expertise">Cooking Expertise</label>
+      <select id="expertise">
+        <option value="Select Cooking Expertise", disabled selected>Select Cooking Expertise</option>
+        <option value="Sometimes Cook">Sometimes Cook</option>
+        <option value="Cook Everyday">Cook Everyday</option>
+        <option value="Cooking is a Hobby">Cooking is a Hobby</option>
+        <option value="Professional Chef">Professional Chef</option>
+      </select>
+    </form>
+
+  </section>
   <footer>
     Original Recipe came from "Somewhere"
   </footer>
