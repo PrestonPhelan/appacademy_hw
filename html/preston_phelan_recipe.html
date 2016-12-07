@@ -24,7 +24,22 @@
       <a href="en.wikipedia.org">Wikipedia Article</a>
     </figcaption>
       <head>
-      <title>Preston Phelan Recipe</title>
+        <meta charset="utf-8"/>
+        <title>Preston Phelan Recipe</title>
+        <meta name="description" content="A grand recipe, the best recipe for Sunday mornings." />
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-12345678-9', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+        <script type="text/javascript" src="external_javascript_example.js" />
+        <link rel="stylesheet" href="css_reset.css" type="text/css" />
+
       </head>
     <body>
           <h1>Shakshuka</h1>
@@ -41,8 +56,8 @@
           <!-- Recipe source will go here -->
       </body>
   </section>
-  <section>
-    <form action="reviews/", method="post">
+  <section id="reviews">
+    <form id="review-form" action="reviews/", method="post">
       <label id="review">Write a Review of this Recipe
         <br>
         <textarea label="review"></textarea>
