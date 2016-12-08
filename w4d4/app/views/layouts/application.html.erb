@@ -9,7 +9,7 @@
 <body>
   <header>
     <%= render 'shared/errors' %>
-    
+
     Hello, <%= current_user.nil? ? "Guest" : current_user.username %>
     <% if current_user.nil? %>
       <%= button_to 'Login', new_session_url, method: :get %>
@@ -21,4 +21,9 @@
 <%= yield %>
 
 </body>
+<footer>
+  This is our 99 Cats site.  Please feel free to browse!
+
+  <%= yield :footer %>
+</footer>
 </html>

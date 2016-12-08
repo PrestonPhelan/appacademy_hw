@@ -1,3 +1,9 @@
 <h1>Edit My Cat</h1>
 <%= render "shared/errors" %>
 <%= render "form", cat: @cat %>
+
+<% content_for :footer do %>
+  <p>
+  Make edits to your cat here.
+  </p>
+<% end %>
