@@ -119,15 +119,7 @@ herd.forEach(Elephant.paradeHelper);
 
 
 function dinerBreakfast() {
-  let order = `scrambeled eggs and bacon`;
-
-  function closure(element) {
-    order = order + ` ${element}`;
-  }
-
-  closure(arguments[0]);
-
-  return `I'd like ${order} please.`;
+  
 }
 
 let bfastOrder = dinerBreakfast;
