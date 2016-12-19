@@ -2,12 +2,13 @@ body {
   font-family: "Arial, sans-serif";
   width: 900px;
   margin: 0 auto;
+  display: flex;
   }
 
 aside {
-  width: 180px;
-  display: box;
+  flex: 1;
   margin-right: 15px;
+  order: 1;
 }
 
 aside > ul > li, #Directions > li {
@@ -17,8 +18,9 @@ aside > ul > li, #Directions > li {
 }
 
 section {
-  width: 700px;
-  display: box;
+  display: flex;
+  flex: 4;
+  order: 1;
 }
 
 select {
@@ -33,11 +35,16 @@ h1 { font-size: 38px }
 h2 { font-size: 32px }
 ol { list-style: }
 .ingredients-list { list-style: "square inside" }
-img { display: inline; }
-nav { display: inline; }
-nav > ul { display: inline-block; }
-nav > ul > a { padding: 20px; }
-
+header > img { float: left; }
+nav { float: right; }
 input {
   display: box;
+}
+
+header:after {
+  clear: both;
+}
+
+figure {
+  flex: 1, 100%;
 }
