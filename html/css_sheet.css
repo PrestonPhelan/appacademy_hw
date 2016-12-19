@@ -1,5 +1,43 @@
-body { font-family: "Arial, sans-serif" }
+body {
+  font-family: "Arial, sans-serif";
+  width: 900px;
+  margin: 0 auto;
+  }
+
+aside {
+  width: 180px;
+  display: box;
+  margin-right: 15px;
+}
+
+aside > ul > li, #Directions > li {
+  display: box;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+section {
+  width: 700px;
+  display: box;
+}
+
+select {
+  margin: 20px;
+}
+
+input[type="text"], select, textarea {
+  width: 180px;
+}
+
 h1 { font-size: 38px }
 h2 { font-size: 32px }
 ol { list-style: }
 .ingredients-list { list-style: "square inside" }
+img { display: inline; }
+nav { display: inline; }
+nav > ul { display: inline-block; }
+nav > ul > a { padding: 20px; }
+
+input {
+  display: box;
+}
