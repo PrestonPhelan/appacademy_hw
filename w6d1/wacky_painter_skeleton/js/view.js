@@ -78,7 +78,7 @@ View.prototype.exercise6 = function () {
 
   //your code here!
   const $lis = $('li');
-  $lis.each(event => { $(this).css("background-color", window._randomColorString()); });
+  $lis.each(function(index, elem) { $(elem).css("background-color", window._randomColorString()); });
 };
 
 View.prototype.exercise7 = function(){
@@ -89,7 +89,10 @@ View.prototype.exercise7 = function(){
   //rainbow.
 
   //your code here!
-  $('li').hover( event => { console.log($(event.currentTarget).attr("background-color")); });
+  $('li').on ("mouseover", event => {
+    const $current = $(event.currentTarget);
+    console.log($current.css('background-color'));
+  });
 };
 
 
