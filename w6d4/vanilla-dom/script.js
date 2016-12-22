@@ -10,6 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+
+
+  // insert it as the last item in the ul.
+
+  document.querySelectorAll("#restaurants li").forEach((li) => {
+    li.addEventListener("click", toggleLi);
+  });
+
+
+
+  // adding SF places as list items
+
+  // --- your code here!
   const placeFormEl = document.getElementById('place-form');
   placeFormEl.addEventListener("submit", e => {
     e.preventDefault();
@@ -31,24 +44,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // insert it as the last item in the ul.
-
-  document.querySelectorAll("#restaurants li").forEach((li) => {
-    li.addEventListener("click", toggleLi);
-  });
-
-
-
-  // adding SF places as list items
-
-  // --- your code here!
-
-
 
   // adding new photos
 
   // --- your code here!
+  const photoFormEl = document.getElementsByClassName('photo-show-button');
+  photoFormEl[0].addEventListener("click", function() {
+    const photoFormDiv = document.querySelector(".photo-form-container");
+    if (photoFormDiv.className === "photo-form-container") {
+      photoFormDiv.className = "photo-form-container hidden";
+    } else {
+      photoFormDiv.className = "photo-form-container";
+    }
+  });
 
+  const photoSubmitEl = document.getElementsByClassName('photo-url-submit');
+  photoSubmitEl[0].addEventListener("click", e => {
+    e.preventDefault();
 
+    const photoURL = document.getElementsByClassName('photo-url-input')[0].value;
+
+    const ul = document.getElementsByClassName('dog-photos')[0];
+    const li = document.createElement("li");
+    const img = document.createElement("img");
+
+    img.src = photoURL;
+    console.log(img.src);
+
+    li.appendChild(img);
+
+    ul.appendChild(li);
+  });
 
 });
