@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
 
+const giphyIndexItems = (giphys) => {
+  if (giphys) {
+    return giphys.map( (giphy, idx) => {
+      return (
+        <li key={idx}>
+          <img src={giphy.images.fixed_height.url} />
+        </li>
+      );
+    });
+  } else {
+    return (<div></div>);
+  }
+};
+
 class GiphysIndex extends Component {
   render() {
-    // debugger;
     if (this.props.giphys[0]) {
       return (
         <div>
-          <img src={this.props.giphys[0].images.fixed_height.url} />
-          <img src={this.props.giphys[1].images.fixed_height.url} />
+          <ul>
+            {giphyIndexItems(this.props.giphys)}
+          </ul>
         </div>
       );
     } else {
