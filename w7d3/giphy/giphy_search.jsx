@@ -5,7 +5,6 @@ import Root from './components/root';
 // import { fetchSearchGiphys } from './util/api_util.js';
 import { fetchSearchGiphys } from './actions/giphy_actions';
 
-// window.store = store;
 // window.fetchSearchGiphys = fetchSearchGiphys;
 // window.receiveSearchGiphys = receiveSearchGiphys;
 
